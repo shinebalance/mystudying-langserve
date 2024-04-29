@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "mystudying-langserve"
+version = "0.1.0"
+description = ""
+authors = ["shinebalance <manazasi2020@outlook.com>"]
+license = "MIT"
+packages = [
+    { include = "app" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.23.2"
+langserve = {extras = ["server"], version = ">=0.0.30"}
+langchain-openai = "^0.1.4"
+langchain-core = "^0.1.46"
+python-dotenv = "^1.0.1"
+pydantic-settings = "^2.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+langchain-cli = ">=0.0.15"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
