@@ -43,13 +43,18 @@ def create_app() -> FastAPI:
         chains_holder.openai_model,
         path="/openai",
     )
-    # ユーザー定義のチェーン
+    # OpenAIモデル、ユーザー定義のチェーン
     add_routes(
         application,
         chains_holder.drag_girlchat(),
         path="/joke",
     )
-
+    # Geminiモデル
+    add_routes(
+        application,
+        chains_holder.gemini_model,
+        path="/gemini",
+    )
     return application
 
 
