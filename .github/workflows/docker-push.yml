@@ -35,7 +35,6 @@ jobs:
           push: true
           tags: ghcr.io/${{ github.repository }}/${{ env.REPOSITORY_NAME }}:${{ github.sha }}
           context: ./simplechat
-          file: ./Dockerfile
 
       - name: Build and push Docker image with datetime tag
         run: |
