@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  my-langserve-simplechat:
+    build: 
+      context: ./simplechat
+      dockerfile: Dockerfile
+    image: my-langserve-simplechat
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./simplechat/.env
