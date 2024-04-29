@@ -33,13 +33,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ghcr.io/${{ github.repository }}/${{ env.REPOSITORY_NAME }}:${{ github.sha }}
+          tags: ghcr.io/${{ github.repository }}/${{ env.REPOSITORY_NAME }}:latest
           context: ./simplechat
           file: ./simplechat/Dockerfile
-
-      # - name: Build and push Docker image with datetime tag
-      #   run: |
-      #     DATE_TAG=$(date -u +'%Y%m%d%H%M%S')
-      #     docker build -t ghcr.io/${{ github.repository }}/${{ env.REPOSITORY_NAME }}:$DATE_TAG .
-      #     docker push ghcr.io/${{ github.repository }}/${{ env.REPOSITORY_NAME }}:$DATE_TAG
-
